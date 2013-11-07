@@ -18,8 +18,14 @@ def create
 end
 
 def destroy
-@picture_for_deletion = Picture.find(params[:id])
-@picture_for_deletion.destroy
+    @picture_for_deletion = Picture.find(params[:id])
+    @picture_for_deletion.destroy
 end
+
+def edit
+    @picture_to_edit=Picture.find(params[:id])
+
+end
+
 
 end
