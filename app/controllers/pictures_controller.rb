@@ -15,8 +15,11 @@ def create
   @p.source = params[:source]
   @p.caption = params[:caption]
   @p.save
+end
 
-
+def destroy
+@picture_for_deletion = Picture.find(params[:id])
+@picture_for_deletion.destroy
 end
 
 end
