@@ -1,0 +1,11 @@
+<!-- update_picture/:id -->
+
+<h1>Your picture has been updated</h1>
+
+<h3>Updated Picture ID#<%=params[:id]%></h3>
+
+<img width="200"src ="<%= @updated_picture.source%>">
+
+<p>This is the <%= @updated_picture.caption %></p>
+
+<p><a href="http://localhost:3000/all_pictures">To return to the full list click here</a></p>

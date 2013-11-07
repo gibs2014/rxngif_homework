@@ -2,12 +2,12 @@
 
 <h1>All Pictures</h1>
 
-<ol>
+<ul>
     <% @list_of_pictures.each do |pic| %>
     <li>
         <img width="200" src="<%=pic.source%>">
         <a href="http://localhost:3000/picture_details/<%= pic.id %>"><%=pic.caption%></a>
         </li>
     <% end %>
-</ol>
+</ul>
 

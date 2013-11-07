@@ -1,9 +1,11 @@
 <!-- /picture_details/:id -->
 
-<h1>Picture Details ID# <%= params[:id] %></h1>
+<h1>This is the <%= @picture.caption %></h1>
 
 <img width="200"src ="<%= @picture.source%>">
 
-<p>This is the <%= @picture.caption %></p>
 
-<a href="http://localhost:3000/delete_picture/<%= @picture.id %>">Delete this picture</a>
+<p><a href="http://localhost:3000/edit_picture_form/<%= @picture.id %>">Edit this picture</a></p>
+
+<p><a href="http://localhost:3000/delete_picture/<%= @picture.id %>">Delete this picture</a></p>
+
