@@ -7,6 +7,9 @@
     <li>
         <img width="200" src="<%=pic.source%>">
         <a href="http://localhost:3000/picture_details/<%= pic.id %>"><%=pic.caption%></a>
+        <a href="http://localhost:3000/edit_picture_form/<%= pic.id %>">Edit</a>
+        <a href="http://localhost:3000/delete_picture/<%= pic.id %>">Delete</a>
+
         </li>
     <% end %>
 </ul>
