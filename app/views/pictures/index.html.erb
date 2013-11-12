@@ -1,16 +1,23 @@
 <!-- /all_pictures -->
 
-<h1>All Pictures</h1>
+<h1>List of Pictures</h1>
 
-<ul>
+    <div>
+      <%=link_to "Add a new picture", new_picture_url %>
+    </div>
+
+ <ul>
     <% @list_of_pictures.each do |pic| %>
-    <li>
-        <img width="200" src="<%=pic.source%>">
-        <a href="http://localhost:3000/picture_details/<%= pic.id %>"><%=pic.caption%></a>
-        <a href="http://localhost:3000/edit_picture_form/<%= pic.id %>">Edit</a>
-        <a href="http://localhost:3000/delete_picture/<%= pic.id %>">Delete</a>
+        <li>
+        <div>
+            <%=image_tag(pic.source, :width=>200)%>
+        </div>
+            <p><%= pic.caption%></p>
+            <%= link_to "Show", picture_url(pic.id), :method => "get"%>
+            <%= link_to "Edit", edit_picture_url(pic.id), :method => "get"%>
+            <%= link_to "Destroy", picture_url(pic.id), :method => "delete"%>
 
         </li>
-    <% end %>
-</ul>
+        <% end %>
+    </ul>
 

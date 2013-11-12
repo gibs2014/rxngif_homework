@@ -15,26 +15,29 @@ end
     @p.source = params[:source]
     @p.caption = params[:caption]
     @p.save
-    redirect_to "http://localhost:3000/all_pictures",:notice=>"picture has been created"
+
+    redirect_to(pictures_url, {:notice=>"picture has been created"})
   end
 
 def destroy
     @picture_for_deletion = Picture.find(params[:id])
     @picture_for_deletion.destroy
-    redirect_to "http://localhost:3000/all_pictures", :notice=>"picture has been deleted"
+
+    redirect_to(pictures_url,{:notice=>"picture has been deleted"})
 end
 
 def edit
-    @picture_to_edit=Picture.find(params[:id])
+    @picture=Picture.find(params[:id])
 end
 
 def update
-  @updated_picture = Picture.find(params[:id])
-  @updated_picture.source = params[:source]
-  @updated_picture.caption = params[:caption]
-  @updated_picture.save
-  redirect_to "http://localhost:3000/picture_details/#{@updated_picture.id}", :notice=>"Picture updated"
-  end
+  @picture = Picture.find(params[:id])
+  @picture.source = params[:source]
+  @picture.caption = params[:caption]
+  @picture.save
+
+  redirect_to(picture_url,{:notice => "your picture has been updated"})
+    end
 
 
 end
